@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "FreeFlight Interpark",
+  "version": "1.0.0",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://ticket.interpark.com/*",
+    "https://ticket.interpark.com/*",
+    "http://tickets.interpark.com/*",
+    "https://tickets.interpark.com/*",
+    "http://poticket.interpark.com/*",
+    "https://poticket.interpark.com/*"
+  ],
+  "action": {
+    "default_popup": "src/popup/index.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "src/scripts/index.ts"
+      ],
+      "matches": [
+        "http://ticket.interpark.com/*",
+        "https://ticket.interpark.com/*",
+        "http://tickets.interpark.com/*",
+        "https://tickets.interpark.com/*",
+        "http://poticket.interpark.com/*",
+        "https://poticket.interpark.com/*"
+      ],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ]
+}
